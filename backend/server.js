@@ -24,6 +24,16 @@ const groq = new Groq({
     apiKey: process.env.GROQ_API_KEY
 });
 
+// ==================== HEALTH CHECK ENDPOINT (FOR UPTIME MONITORING) ====================
+app.get('/health', (req, res) => {
+    res.status(200).json({ 
+        status: 'ok', 
+        message: 'Server is running!',
+        uptime: process.uptime(),
+        timestamp: new Date().toISOString()
+    });
+});
+
 // ============================================
 // PREMIUM EMAIL TEMPLATE - For Admin (Toufeeque)
 // ============================================
@@ -687,6 +697,7 @@ app.post('/api/chat', async (req, res) => {
     }
 });
 
+// Serve index.html for all other routes
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../', 'index.html'));
 });
@@ -696,4 +707,5 @@ app.listen(PORT, () => {
     console.log(`📁 Serving frontend from: ${path.join(__dirname, '../')}`);
     console.log(`🤖 Chatbot: Portfolio-only questions`);
     console.log(`📧 Email Service: Premium templates ready ✓`);
+    console.log(`❤️ Health endpoint: http://localhost:${PORT}/health`);
 });
