@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description" content="Toufeeque Adil - AI Engineer, AI Agent Developer & Modern Web Developer. Building intelligent AI solutions and modern web experiences.">
+    <meta name="keywords" content="AI Engineer, AI Agent Developer, Web Developer, Portfolio, Python, Machine Learning, Chatbots, Toufeeque Adil">
+    <meta name="author" content="Toufeeque Adil">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Toufeeque Adil | AI Engineer & Web Developer">
+    <meta property="og:description" content="Building intelligent AI solutions and modern web experiences. Explore my projects and AI assistant.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Toufeeque+Adil+Portfolio">
+    <meta property="og:url" content="https://toufeequeadil.dev">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Toufeeque Adil | AI Engineer & AI Agent Developer</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 45%, #eef4ff 100%);
+            color: #0f172a;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            inset: auto;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: 0.18;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        body::before {
+            top: -60px;
+            left: -80px;
+            background: #3b82f6;
+        }
+
+        body::after {
+            right: -90px;
+            bottom: -70px;
+            background: #8b5cf6;
+        }
+
+        ::selection {
+            background: rgba(129, 140, 248, 0.35);
+            color: #fff;
+        }
+
+        body {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 45%, #eef4ff 100%);
+            color: #0f172a;
+        }
+
+        .glass,
+        .glass-card,
+        .chatbot-window {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+        }
+
+        .message.bot .message-content {
+            background: rgba(239, 246, 255, 0.95);
+            color: #1e293b;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at top, #f8fbff 0%, #eff6ff 45%, #ffffff 100%);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(14px);
+            border-radius: 2rem;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+        }
+
+        .glass-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 250, 255, 0.92));
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            box-shadow: 0 18px 35px rgba(15, 23, 42, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            padding: 1.5rem;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 24px 40px rgba(15, 23, 42, 0.45);
+            border-color: rgba(96, 165, 250, 0.55);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #110f0f, #333a58, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3b82f6;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #0f172a;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 680px;
+        }
+
+        .hero-badge {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .ai-badge {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            padding: 0.3rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .glow-text {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #110f0f, #333a58, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: glow 3s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(59,130,246,0.3); }
+            50% { text-shadow: 0 0 40px rgba(139,92,246,0.5); }
+        }
+
+        .typing-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #201970;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #7c3aed;
+            margin-bottom: 1rem;
+        }
+
+        .intro {
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 16px 24px rgba(59, 130, 246, 0.35);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(96, 165, 250, 0.45);
+            padding: 0.8rem 1.8rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            color: #0f172a;
+        }
+
+        .btn-outline:hover {
+            background: rgba(239, 246, 255, 0.98);
+            border-color: #8b5cf6;
+        }
+
+        .hero-stats {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .stat-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1rem;
+            border-radius: 1.2rem;
+            width: fit-content;
+        }
+
+        .stat-card i {
+            color: #8b5cf6;
+            font-size: 1.1rem;
+        }
+
+        .tech-badges {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: rgba(239, 246, 255, 0.95);
+            padding: 0.3rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            border: 1px solid rgba(147, 197, 253, 0.6);
+            color: #1e293b;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #110f0f, #333a58, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 72px;
+            height: 4px;
+            margin: 0.6rem auto 0;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .passion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .passion-item {
+            padding: 0.8rem;
+            background: rgba(239, 246, 255, 0.9);
+            border-radius: 1rem;
+            text-align: center;
+            transition: all 0.3s;
+            color: #0f172a;
+        }
+
+        .passion-item:hover {
+            background: rgba(224, 242, 254, 0.98);
+            transform: translateY(-3px);
+        }
+
+        .passion-item i {
+            margin-right: 0.5rem;
+            color: #3b82f6;
+        }
+
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .timeline-item {
+            text-align: center;
+        }
+
+        .timeline-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: #4338ca;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(0,0,0,0.08);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.3rem;
+        }
+
+        .progress-bar div {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 4px;
+            transition: width 1s;
+        }
+
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #bfdbfe;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #0f172a;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 255, 0.95));
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 1.1rem;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+            box-shadow: 0 16px 26px rgba(8, 15, 30, 0.32);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 36px rgba(59, 130, 246, 0.14);
+        }
+
+        .project-image {
+            height: 180px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(180deg, #ffffff, #f8fafc);
+            border-radius: 1.5rem;
+            max-width: 550px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #3b82f6;
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .modal-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .modal-tech span {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            color: #3b82f6;
+        }
+
+        .modal-desc {
+            color: #475569;
+            line-height: 1.6;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            text-align: center;
+            cursor: pointer;
+            min-height: 100%;
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.8rem;
+            align-items: stretch;
+        }
+
+        .contact-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+            padding: 0.45rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(239, 246, 255, 0.95);
+            border: 1px solid rgba(147, 197, 253, 0.35);
+            color: #1e3a8a;
+            font-size: 0.9rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            padding: 0.9rem 1rem;
+            border-radius: 1rem;
+            background: rgba(248, 250, 255, 0.95);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            color: #0f172a;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-2px);
+            border-color: rgba(59, 130, 246, 0.45);
+        }
+
+        .contact-method i {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.75rem;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, rgba(59,130,246,0.14), rgba(139,92,246,0.18));
+            color: #4338ca;
+            flex-shrink: 0;
+        }
+
+        .contact-method strong {
+            display: block;
+            color: #111827;
+            font-size: 0.98rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .contact-method span {
+            color: #475569;
+            font-size: 0.92rem;
+        }
+
+        .contact-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-top: 0.35rem;
+        }
+
+        .contact-chip {
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            background: rgba(237, 233, 254, 0.95);
+            border: 1px solid rgba(167, 139, 250, 0.25);
+            color: #5b21b6;
+            font-size: 0.82rem;
+        }
+
+        .contact-form label {
+            display: block;
+            color: #334155;
+            font-size: 0.92rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            border-radius: 0.95rem;
+            color: #0f172a;
+            font-family: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: rgba(129, 140, 248, 0.85);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.16);
+        }
+
+        .contact-note {
+            color: #475569;
+            font-size: 0.92rem;
+            margin-top: -0.2rem;
+        }
+
+        .form-status {
+            min-height: 1.1rem;
+            margin: 0.15rem 0 0.55rem;
+            font-size: 0.92rem;
+            color: #334155;
+        }
+
+        .form-status.success {
+            color: #059669;
+        }
+
+        .form-status.error {
+            color: #dc2626;
+        }
+
+        /* Toast Notification */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 1rem 1.8rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            z-index: 3000;
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            backdrop-filter: blur(10px);
+            max-width: 90vw;
+        }
+
+        .toast-notification.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .toast-notification.success {
+            background: linear-gradient(135deg, #059669, #047857);
+        }
+
+        .toast-notification.error {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+
+        .toast-notification.info {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .toast-icon {
+            font-size: 1.2rem;
+        }
+
+        .toast-message {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 1.4rem;
+            right: 1.4rem;
+            z-index: 1000;
+        }
+
+        .chatbot-toggle {
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #a78bfa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 18px 35px rgba(76, 104, 255, 0.35);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+        }
+
+        .chatbot-toggle:hover {
+            transform: translateY(-2px) scale(1.04);
+        }
+
+        .chatbot-toggle i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .chat-status {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            width: 12px;
+            height: 12px;
+            background: #10b981;
+            border-radius: 50%;
+            border: 2px solid white;
+            animation: pulse 2s infinite;
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 86px;
+            right: 0;
+            width: 390px;
+            max-width: calc(100vw - 1rem);
+            height: 560px;
+            max-height: 78vh;
+            border-radius: 1.25rem;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 255, 0.98));
+            backdrop-filter: blur(14px);
+        }
+
+        .chatbot-window.active {
+            display: flex;
+        }
+
+        .chatbot-header {
+            padding: 0.95rem 1rem;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chatbot-header h3 {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: white;
+        }
+
+        .chatbot-header button {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            display: flex;
+        }
+
+        .message.bot .message-content {
+            background: linear-gradient(180deg, rgba(248, 250, 255, 0.98), rgba(239, 246, 255, 0.98));
+            border: 1px solid rgba(129, 140, 248, 0.18);
+            border-radius: 1rem 1rem 1rem 0;
+            padding: 0.85rem 0.9rem;
+            max-width: 88%;
+            color: #1e293b;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 1rem 1rem 0 1rem;
+            padding: 0.85rem 0.9rem;
+            max-width: 88%;
+            color: white;
+        }
+
+        .suggested-questions {
+            padding: 0.55rem 0.7rem 0.75rem;
+            display: flex;
+            gap: 0.45rem;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(148, 163, 184, 0.18);
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        .suggestion-btn {
+            background: rgba(239, 246, 255, 0.95);
+            border: 1px solid rgba(129, 140, 248, 0.2);
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            color: #1e293b;
+        }
+
+        .suggestion-btn:hover {
+            background: linear-gradient(135deg, rgba(219, 234, 254, 0.95), rgba(237, 233, 254, 0.98));
+        }
+
+        .chat-input-area {
+            padding: 0.65rem;
+            display: flex;
+            gap: 0.45rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.18);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .chat-input-area textarea {
+            flex: 1;
+            padding: 0.65rem 0.75rem;
+            background: rgba(255, 255, 255, 0.98);
+            border: 1px solid rgba(129, 140, 248, 0.22);
+            border-radius: 0.9rem;
+            color: #0f172a;
+            font-family: inherit;
+            resize: none;
+        }
+
+        .chat-input-area textarea:focus {
+            outline: none;
+            border-color: rgba(129, 140, 248, 0.55);
+        }
+
+        .chat-input-area button {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.2s ease;
+        }
+
+        .chat-input-area button:hover {
+            transform: translateY(-1px);
+        }
+
+        .typing-indicator {
+            padding: 0.5rem;
+            display: flex;
+            gap: 0.3rem;
+            color: #4338ca;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .scroll-top.show {
+            display: flex;
+        }
+
+        .scroll-top:hover {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #110f0f, #333a58, #8b5cf6);
+            margin-top: 3rem;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                display: none;
+            }
+            
+            .menu-btn {
+                display: block;
+            }
+            
+            .chatbot-window {
+                position: fixed;
+                left: 0.5rem;
+                right: 0.5rem;
+                bottom: 5rem;
+                width: auto;
+                height: min(72vh, 560px);
+            }
+            
+            .glow-text {
+                font-size: 2rem;
+            }
+            
+            .typing-title {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+            
+            .modal-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="toast-notification">
+        <span class="toast-icon"><i class="fas fa-check-circle"></i></span>
+        <span class="toast-message">Message</span>
+    </div>
+    
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="logo">TA<span style="color:#3babf6">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-btn" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span class="status-dot"></span> Available for work
+                <span class="ai-badge">🤖 AI Developer</span>
+                <span class="ai-badge">🚀 AI Agent Builder</span>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="glow-text">Toufeeque Adil</h1>
+                    <h2 class="typing-title">AI & Data Science Developer | Web Developer | AI Agent Builder</h2>
+                    <p class="tagline">"Building Intelligent AI Solutions and Modern Web Experiences."</p>
+                    <p class="intro">Passionate AI & Data Science Developer focused on creating AI-powered applications, intelligent agents, automation solutions, modern web platforms, and real-world software products.</p>
+                    <div class="cta-buttons">
+                        <button class="btn-primary" id="viewProjectsBtn">View Projects</button>
+                        <button class="btn-outline" id="downloadResumeBtn">Download Resume</button>
+                        <button class="btn-outline" id="hireMeBtn">Hire Me</button>
+                        <button class="btn-outline" id="contactBtn">Contact Me</button>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card glass-card">
+                        <i class="fab fa-github"></i>
+                        <span>15+ Repositories</span>
+                    </div>
+                    <div class="tech-badges">
+                        <span class="badge">Python</span>
+                        <span class="badge">AI/ML</span>
+                        <span class="badge">LangChain</span>
+                        <span class="badge">React</span>
+                        <span class="badge">Groq API</span>
+                        <span class="badge">TensorFlow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content glass-card">
+                <p style="margin-bottom: 1rem;">I'm passionate about creating intelligent systems that solve real-world problems. My expertise spans AI & Data Science, Machine Learning, Generative AI, AI Agents, Prompt Engineering, and Modern Web Development.</p>
+                <p>With a strong foundation in both AI and web technologies, I build end-to-end solutions that are intelligent, scalable, and user-friendly.</p>
+                <div class="passion-grid">
+                    <div class="passion-item"><i class="fas fa-robot"></i> AI Assistants</div>
+                    <div class="passion-item"><i class="fas fa-microphone-alt"></i> Voice Assistants</div>
+                    <div class="passion-item"><i class="fas fa-comment-dots"></i> Chatbots</div>
+                    <div class="passion-item"><i class="fas fa-language"></i> Speech-to-Text</div>
+                    <div class="passion-item"><i class="fas fa-briefcase"></i> Job Portals</div>
+                    <div class="passion-item"><i class="fas fa-graduation-cap"></i> LMS Platforms</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Education & Training</h2>
+            <div class="timeline">
+                <div class="timeline-item glass-card">
+                    <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                    <h3>Intermediate</h3>
+                    <p>RTS Ghotki</p>
+                    <span>2022 - 2024</span>
+                </div>
+                <div class="timeline-item glass-card">
+                    <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                    <h3>Associate Degree in Science (ADS)</h3>
+                    <p>Shah Abdul Latif University (SALU)</p>
+                    <span>2025 - 2029</span>
+                </div>
+                <div class="timeline-item glass-card">
+                    <div class="timeline-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Data Science</h3>
+                    <p>SMIT Sukkur</p>
+                    <span>2025 - 2026</span>
+                </div>
+                <div class="timeline-item glass-card">
+                    <div class="timeline-icon"><i class="fas fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>NAVTTC Web Development Course</p>
+                    <span>2024 - 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-item">Python <div class="progress-bar"><div style="width: 90%"></div></div></div>
+                    <div class="skill-item">JavaScript <div class="progress-bar"><div style="width: 85%"></div></div></div>
+                    <div class="skill-item">HTML5/CSS3 <div class="progress-bar"><div style="width: 88%"></div></div></div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-microchip"></i> AI & Data Science</h3>
+                    <div class="skill-item">Machine Learning <div class="progress-bar"><div style="width: 85%"></div></div></div>
+                    <div class="skill-item">Generative AI <div class="progress-bar"><div style="width: 80%"></div></div></div>
+                    <div class="skill-item">AI Agents <div class="progress-bar"><div style="width: 75%"></div></div></div>
+                    <div class="skill-item">Prompt Engineering <div class="progress-bar"><div style="width: 85%"></div></div></div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-globe"></i> Web Development</h3>
+                    <div class="skill-item">Responsive Design <div class="progress-bar"><div style="width: 90%"></div></div></div>
+                    <div class="skill-item">Frontend Development <div class="progress-bar"><div style="width: 85%"></div></div></div>
+                    <div class="skill-item">Streamlit <div class="progress-bar"><div style="width: 80%"></div></div></div>
+                </div>
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                    <div class="skill-item">Git/GitHub <div class="progress-bar"><div style="width: 85%"></div></div></div>
+                    <div class="skill-item">VS Code <div class="progress-bar"><div style="width: 90%"></div></div></div>
+                    <div class="skill-item">Hugging Face <div class="progress-bar"><div style="width: 75%"></div></div></div>
+                    <div class="skill-item">Groq API <div class="progress-bar"><div style="width: 80%"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI Projects</button>
+                <button class="filter-btn" data-filter="web">Web Projects</button>
+            </div>
+            <div class="projects-grid" id="projectsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div class="modal-icon" id="modalIcon"></div>
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <div class="modal-tech" id="modalTech"></div>
+            <p class="modal-desc" id="modalDesc"></p>
+            <div class="modal-buttons">
+                <button class="btn-outline" id="modalGithubBtn"><i class="fab fa-github"></i> View Code</button>
+                <button class="btn-primary" id="modalDemoBtn"><i class="fas fa-external-link-alt"></i> Live Demo</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Services I Offer</h2>
+            <div class="services-grid">
+                <div class="service-card glass-card"><i class="fas fa-robot"></i><h3>AI Chatbot Development</h3><p>Custom intelligent chatbots for businesses</p></div>
+                <div class="service-card glass-card"><i class="fas fa-brain"></i><h3>AI Agent Development</h3><p>Intelligent automation agents</p></div>
+                <div class="service-card glass-card"><i class="fas fa-laptop-code"></i><h3>Web Development</h3><p>Modern full-stack web applications</p></div>
+                <div class="service-card glass-card"><i class="fas fa-cogs"></i><h3>Automation Solutions</h3><p>Workflow and process automation</p></div>
+                <div class="service-card glass-card"><i class="fas fa-chart-line"></i><h3>Machine Learning Projects</h3><p>ML model development & deployment</p></div>
+                <div class="service-card glass-card"><i class="fas fa-plug"></i><h3>AI Integration Services</h3><p>API and AI integration</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Achievements & Certifications</h2>
+            <div class="skills-grid">
+                <div class="glass-card">
+                    <h3><i class="fas fa-trophy"></i> Achievements</h3>
+                    <ul style="margin-top: 1rem; list-style: none;">
+                        <li>✓ AI & Data Science Student at SMIT Sukkur</li>
+                        <li>✓ Web Development Training via NAVTTC</li>
+                        <li>✓ 7+ AI Projects Completed</li>
+                        <li>✓ 10+ Web Development Projects Completed</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                    <ul style="margin-top: 1rem; list-style: none;">
+                        <li>✓ SMIT AI & Data Science Certification</li>
+                        <li>✓ NAVTTC Web Development Certification</li>
+                        <li>✓ Python Programming Certification</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-column">
+                    <div class="contact-info glass-card">
+                        <span class="contact-badge"><i class="fas fa-sparkles"></i> Available for freelance, internships & collaborations</span>
+                        <h3 style="margin: 0.7rem 0 0.35rem; font-size: 1.35rem;">Let's build something smart</h3>
+                        <p style="color: #475569; line-height: 1.6; margin-bottom: 0.8rem;">I enjoy turning ideas into AI-powered products, modern websites, and automation experiences with a clean, friendly user flow.</p>
+                        <div class="contact-method"><i class="fas fa-envelope"></i><div><strong>Email</strong><span>toufeequeadil24@gmail.com</span></div></div>
+                        <div class="contact-method"><i class="fab fa-linkedin"></i><div><strong>LinkedIn</strong><span>linkedin.com/in/toufeeque-adil</span></div></div>
+                        <div class="contact-method"><i class="fab fa-github"></i><div><strong>GitHub</strong><span>github.com/ToufeequeAdil007</span></div></div>
+                        <div class="contact-chips">
+                            <span class="contact-chip">Fast responses</span>
+                            <span class="contact-chip">AI + Web</span>
+                            <span class="contact-chip">Remote friendly</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form glass-card" id="contactForm">
+                    <h3 style="margin-top: 0; margin-bottom: 0.4rem;">Send a Message</h3>
+                    <p class="contact-note">Tell me about your project, goals, or team. I'll get back to you soon.</p>
+                    <label for="contactName">Your Name</label>
+                    <input type="text" placeholder="Enter your name" required id="contactName">
+                    <label for="contactEmail">Your Email</label>
+                    <input type="email" placeholder="Enter your email" required id="contactEmail">
+                    <label for="contactMessage">Project Details</label>
+                    <textarea placeholder="Tell me about what you want to build" rows="5" required id="contactMessage"></textarea>
+                    <p id="formStatus" class="form-status" aria-live="polite"></p>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-toggle" id="chatbotToggle" aria-label="Open AI assistant">
+            <i class="fas fa-comment-dots"></i>
+            <span class="chat-status"></span>
+        </div>
+        <div class="chatbot-window glass" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>🤖 Toufeeque AI Assistant</h3>
+                <div>
+                    <button id="clearChatBtn"><i class="fas fa-trash"></i></button>
+                    <button id="closeChatBtn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-content">Hi! 👋 I'm Toufeeque's AI Assistant. Ask me anything about his skills, projects, education, or services!</div>
+                </div>
+            </div>
+            <div class="suggested-questions" id="suggestedQuestions">
+                <button class="suggestion-btn">What projects has he built?</button>
+                <button class="suggestion-btn">Tell me about his AI skills</button>
+                <button class="suggestion-btn">How to contact him?</button>
+                <button class="suggestion-btn">What is his education?</button>
+            </div>
+            <div class="chat-input-area">
+                <textarea id="chatInput" placeholder="Ask me anything about Toufeeque..." rows="2"></textarea>
+                <button id="voiceInputBtn"><i class="fas fa-microphone"></i></button>
+                <button id="sendMessageBtn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <span>AI is thinking</span><span>.</span><span>.</span><span>.</span>
+            </div>
+        </div>
+    </div>
+
+    <button class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+    <footer class="footer">
+        <p>Designed & Developed by Toufeeque Adil | © 2026 All Rights Reserved</p>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+        // Show Toast Notification Function
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toastNotification');
+            const icon = toast.querySelector('.toast-icon i');
+            const messageSpan = toast.querySelector('.toast-message');
+            
+            toast.classList.remove('success', 'error', 'info', 'show');
+            toast.classList.add(type);
+            
+            if (type === 'success') {
+                icon.className = 'fas fa-check-circle';
+            } else if (type === 'error') {
+                icon.className = 'fas fa-exclamation-circle';
+            } else {
+                icon.className = 'fas fa-info-circle';
+            }
+            
+            messageSpan.textContent = message;
+            setTimeout(() => toast.classList.add('show'), 10);
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        // Projects Data
+        const projects = [
+            { name: "AI Voice Assistant", category: "ai", tech: "Python, Speech Recognition, pyttsx3", desc: "Voice-controlled AI assistant with command execution. Users can give voice commands to perform tasks like opening websites, telling time, and answering questions.", icon: "fas fa-microphone-alt", github: "https://github.com/ToufeequeAdil007/ai-voice-assistant", demo: "#" },
+            { name: "AI Portfolio Assistant", category: "ai", tech: "Groq API, Llama 3.3, JavaScript", desc: "AI-powered chatbot for this portfolio website. Built with Groq's Llama 3.3 model, it answers questions about Toufeeque's skills, projects, and experience.", icon: "fas fa-robot", github: "https://github.com/ToufeequeAdil007/portfolio-assistant", demo: "#" },
+            { name: "Speech-to-Text App", category: "ai", tech: "Web Speech API, Python", desc: "Real-time speech transcription application that converts spoken words to text with high accuracy. Supports multiple languages and exports transcripts.", icon: "fas fa-language", github: "https://github.com/ToufeequeAdil007/speech-to-text", demo: "#" },
+            { name: "AI Chatbot", category: "ai", tech: "LangChain, OpenAI/Groq", desc: "Intelligent conversational AI for customer support. Features include context memory, multi-turn conversations, and integration with multiple LLM providers.", icon: "fas fa-comments", github: "https://github.com/ToufeequeAdil007/ai-chatbot", demo: "#" },
+            { name: "Job Portal System", category: "web", tech: "MERN Stack, JWT, MongoDB", desc: "Full-stack job platform for recruiters and job seekers. Features include job posting, resume upload, application tracking, and real-time notifications.", icon: "fas fa-briefcase", github: "https://github.com/ToufeequeAdil007/job-portal", demo: "#" },
+            { name: "LMS Management System", category: "web", tech: "React, Node.js, MongoDB", desc: "Learning management platform for online courses. Includes video lessons, quizzes, progress tracking, and certificate generation.", icon: "fas fa-graduation-cap", github: "https://github.com/ToufeequeAdil007/lms-system", demo: "#" },
+            { name: "Responsive Portfolio", category: "web", tech: "HTML5, CSS3, JavaScript", desc: "Modern responsive portfolio website with glassmorphism effects, dark mode, and interactive AI chatbot. Fully responsive and SEO optimized.", icon: "fas fa-laptop-code", github: "https://github.com/ToufeequeAdil007/portfolio", demo: "#" }
+        ];
+
+        // Modal functions
+        let currentProject = null;
+
+        function showProjectModal(project) {
+            currentProject = project;
+            document.getElementById('modalIcon').innerHTML = `<i class="${project.icon}" style="font-size: 3rem; color: #3b82f6;"></i>`;
+            document.getElementById('modalTitle').textContent = project.name;
+            document.getElementById('modalTech').innerHTML = project.tech.split(',').map(t => `<span>${t.trim()}</span>`).join('');
+            document.getElementById('modalDesc').textContent = project.desc;
+            document.getElementById('projectModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+        }
+
+        // Render Projects
+        function renderProjects(filter = 'all') {
+            const grid = document.getElementById('projectsGrid');
+            if (!grid) return;
+            
+            const filtered = filter === 'all' ? projects : projects.filter(p => p.category === filter);
+            grid.innerHTML = filtered.map(proj => `
+                <div class="project-card" onclick="showProjectModal(${JSON.stringify(proj).replace(/"/g, '&quot;')})">
+                    <div class="project-image"><i class="${proj.icon}"></i></div>
+                    <div style="padding: 1.5rem">
+                        <h3>${proj.name}</h3>
+                        <p style="margin: 0.5rem 0; color: #475569;">${proj.desc.substring(0, 80)}...</p>
+                        <div style="margin: 0.5rem 0">
+                            <span class="badge">${proj.tech.split(',')[0]}</span>
+                            <span class="badge">${proj.tech.split(',')[1] || 'Latest'}</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                            <button class="btn-outline" style="flex: 1; padding: 0.5rem;" onclick="event.stopPropagation(); window.open('${proj.github}', '_blank'); showToast('Opening GitHub repository...', 'info');"><i class="fab fa-github"></i> Code</button>
+                            <button class="btn-primary" style="flex: 1; padding: 0.5rem;" onclick="event.stopPropagation(); showToast('🎉 Live demo coming soon! Check GitHub for updates.', 'info');"><i class="fas fa-external-link-alt"></i> Demo</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Chatbot Variables
+        let chatHistory = [];
+        const API_URL = '/api/chat';
+
+        async function sendMessage(message) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const typingIndicator = document.getElementById('typingIndicator');
+            
+            if (!message.trim()) return;
+            
+            messagesDiv.innerHTML += `<div class="message user"><div class="message-content">${escapeHtml(message)}</div></div>`;
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            
+            typingIndicator.style.display = 'flex';
+            
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message, history: chatHistory })
+                });
+                
+                const data = await response.json();
+                const reply = data.reply || "I'm here to help! Ask me about Toufeeque's skills, projects, or experience.";
+                
+                chatHistory.push({ role: 'user', content: message });
+                chatHistory.push({ role: 'assistant', content: reply });
+                
+                messagesDiv.innerHTML += `<div class="message bot"><div class="message-content">${escapeHtml(reply)}</div></div>`;
+            } catch (error) {
+                messagesDiv.innerHTML += `<div class="message bot"><div class="message-content">Sorry, I'm having trouble connecting. Please try again or email toufeequeadil24@gmail.com directly.</div></div>`;
+            } finally {
+                typingIndicator.style.display = 'none';
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+        }
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // Voice Recognition
+        let recognition = null;
+        if ('webkitSpeechRecognition' in window) {
+            recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+            
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById('chatInput').value = transcript;
+                sendMessage(transcript);
+            };
+            
+            recognition.onerror = function() {
+                showToast('🎤 Voice recognition error. Please type your message.', 'error');
+            };
+        }
+
+        // Initialize Particles
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 100, density: { enable: true, value_area: 800 } },
+                color: { value: "#3b82f6" },
+                shape: { type: "circle" },
+                opacity: { value: 0.4, random: true },
+                size: { value: 2.5, random: true },
+                line_linked: { enable: true, distance: 150, color: "#8b5cf6", opacity: 0.2, width: 1 },
+                move: { enable: true, speed: 1.5, direction: "none", random: false, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } }
+            }
+        });
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProjects();
+            
+            // Modal close events
+            const modal = document.getElementById('projectModal');
+            const closeBtn = document.getElementById('modalClose');
+            const githubBtn = document.getElementById('modalGithubBtn');
+            const demoBtn = document.getElementById('modalDemoBtn');
+            
+            closeBtn.onclick = closeModal;
+            modal.onclick = (e) => { if (e.target === modal) closeModal(); };
+            githubBtn.onclick = () => { if (currentProject) { window.open(currentProject.github, '_blank'); showToast('Opening GitHub repository...', 'info'); } };
+            demoBtn.onclick = () => { showToast('🎉 Live demo coming soon! Check GitHub for updates.', 'info'); };
+            
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderProjects(btn.dataset.filter);
+                });
+            });
+            
+            // Chatbot
+            const chatbotToggle = document.getElementById('chatbotToggle');
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            const closeChatBtn = document.getElementById('closeChatBtn');
+            const sendBtn = document.getElementById('sendMessageBtn');
+            const chatInput = document.getElementById('chatInput');
+            const voiceBtn = document.getElementById('voiceInputBtn');
+            const clearChatBtn = document.getElementById('clearChatBtn');
+            
+            chatbotToggle.addEventListener('click', () => {
+                chatbotWindow.classList.toggle('active');
+            });
+            
+            closeChatBtn.addEventListener('click', () => {
+                chatbotWindow.classList.remove('active');
+            });
+            
+            sendBtn.addEventListener('click', () => {
+                const message = chatInput.value.trim();
+                if (message) {
+                    sendMessage(message);
+                    chatInput.value = '';
+                }
+            });
+            
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendBtn.click();
+                }
+            });
+            
+            if (voiceBtn && recognition) {
+                voiceBtn.addEventListener('click', () => {
+                    recognition.start();
+                    voiceBtn.style.opacity = '0.5';
+                    setTimeout(() => { voiceBtn.style.opacity = '1'; }, 1000);
+                });
+            }
+            
+            clearChatBtn.addEventListener('click', () => {
+                const messagesDiv = document.getElementById('chatMessages');
+                messagesDiv.innerHTML = `<div class="message bot"><div class="message-content">Chat cleared! Ask me anything about Toufeeque's work! 🤖</div></div>`;
+                chatHistory = [];
+                showToast('Chat history cleared!', 'info');
+            });
+            
+            document.querySelectorAll('.suggestion-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    sendMessage(btn.textContent);
+                });
+            });
+            
+            // Scroll to top
+            const scrollBtn = document.getElementById('scrollTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.classList.add('show');
+                } else {
+                    scrollBtn.classList.remove('show');
+                }
+            });
+            
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Buttons
+            document.getElementById('downloadResumeBtn')?.addEventListener('click', () => {
+                showToast('📄 Resume: Toufeeque Adil - AI Engineer & Web Developer. Contact: toufeequeadil24@gmail.com', 'info');
+            });
+            
+            document.getElementById('hireMeBtn')?.addEventListener('click', () => {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+                showToast('💼 Ready to discuss opportunities!', 'info');
+            });
+            
+            document.getElementById('contactBtn')?.addEventListener('click', () => {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            document.getElementById('viewProjectsBtn')?.addEventListener('click', () => {
+                document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                showToast('📁 Exploring projects...', 'info');
+            });
+            
+            // Contact form with email integration
+            document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('contactName').value;
+                const email = document.getElementById('contactEmail').value;
+                const message = document.getElementById('contactMessage').value;
+                const submitBtn = e.target.querySelector('button[type="submit"]');
+                const statusBox = document.getElementById('formStatus');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                statusBox.textContent = '';
+                statusBox.className = 'form-status';
+                
+                try {
+                    const response = await fetch('/api/send-message', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, message })
+                    });
+                    
+                    const data = await response.json();
+                    
+                    if (data.success) {
+                        showToast('✅ Message sent successfully! I will reply within 24 hours.', 'success');
+                        statusBox.textContent = '✅ Message sent successfully! I will reply soon.';
+                        statusBox.className = 'form-status success';
+                        e.target.reset();
+                    } else {
+                        showToast('❌ Failed to send message. Please email directly.', 'error');
+                        statusBox.textContent = '❌ Failed to send message. Please email me directly at toufeequeadil24@gmail.com';
+                        statusBox.className = 'form-status error';
+                    }
+                } catch (error) {
+                    showToast('❌ Network error. Please email directly.', 'error');
+                    statusBox.textContent = '❌ Network error. Please email me directly at toufeequeadil24@gmail.com';
+                    statusBox.className = 'form-status error';
+                } finally {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            });
+            
+            // Mobile menu
+            const menuBtn = document.getElementById('menuBtn');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuBtn && navLinks) {
+                menuBtn.addEventListener('click', () => {
+                    if (navLinks.style.display === 'flex') {
+                        navLinks.style.display = 'none';
+                    } else {
+                        navLinks.style.display = 'flex';
+                        navLinks.style.flexDirection = 'column';
+                        navLinks.style.position = 'absolute';
+                        navLinks.style.top = '70px';
+                        navLinks.style.right = '1rem';
+                        navLinks.style.background = 'rgba(15,25,45,0.95)';
+                        navLinks.style.backdropFilter = 'blur(10px)';
+                        navLinks.style.padding = '1rem';
+                        navLinks.style.borderRadius = '1rem';
+                        navLinks.style.gap = '1rem';
+                        navLinks.style.zIndex = '1000';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
